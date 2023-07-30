@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="biggest_text_size">26sp</dimen>
+    <dimen name="bigger_text_size">24sp</dimen>
+    <dimen name="non_title_text_size">18sp</dimen>
+    <dimen name="middle_text_size">16sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="smaller_text_size">12sp</dimen>
+    <dimen name="nav_title_text_size">22sp</dimen><!---->
+
+    <dimen name="dialog_title">9sp</dimen>
+    <dimen name="dialog_content">7sp</dimen>
+
+    <dimen name="top_btn_w">45dp</dimen>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lgray"
+    android:minHeight="80dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        android:adjustViewBounds="true"
+        android:id="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH1"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV3"
+        app:layout_constraintRight_toRightOf="@id/guidelineV1"/>
+
+    <View
+        android:id="@+id/list_bg"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/white_bg_10"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@+id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH1"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineH3"></View>
+
+
+    <TextView
+        android:id="@+id/name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="OOOO"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/dgray"
+        android:textSize="@dimen/middle_text_size"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH1"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        ></TextView>
+
+
+    <TextView
+        android:id="@+id/introduction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        tools:text="OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+        android:textColor="@color/dgray"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintTop_toBottomOf="@id/name_title"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@+id/guidelineV2"
+        ></TextView>
+
+
+
+    <TextView
+        android:id="@+id/open_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+        android:textColor="@color/dgray"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintTop_toBottomOf="@id/introduction"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@+id/guidelineV2"
+        ></TextView>
+
+
+    <!--最後一個要放的-->
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/open_time"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
+        ></View>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

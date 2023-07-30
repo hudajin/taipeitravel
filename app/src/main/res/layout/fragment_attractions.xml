@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lgray">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineHeader"
+        app:layout_constraintLeft_toLeftOf="parent"></View>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TaipeiTour"
+        android:textColor="@color/white"
+        android:textSize="@dimen/nav_title_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHeader"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <ImageView
+        android:id="@+id/btn_translate"
+        android:layout_width="@dimen/top_btn_w"
+        android:layout_height="@dimen/top_btn_w"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:src="@mipmap/icon_translate"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHeader"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <ListView
+        android:id="@+id/attractions_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:drawSelectorOnTop="true"
+        android:listSelector="@android:color/transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHeader"
+        app:layout_constraintBottom_toBottomOf="parent"></ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

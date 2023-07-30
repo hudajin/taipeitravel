@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_gravity="center">
+
+    <ProgressBar
+        android:id="@+id/CircleProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/progressing_hit"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/progress_bar_dialog_rotate"
+        android:indeterminateDuration="1500"
+        android:indeterminateOnly="true" />
+
+    <TextView
+        android:id="@+id/progressing_hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="請稍等..."
+        android:textSize="@dimen/smaller_text_size" />
+
+</RelativeLayout>
