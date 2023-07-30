@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
-
+import tw.gov.taipeitravel.R
 import tw.gov.taipeitravel.Travel
 import tw.gov.taipeitravel.bean.AttractionsBean
 import tw.gov.taipeitravel.utils.Utils
-import tw.gov.taipeitravel.R
-import java.lang.Exception
 
 class AttractionsAdapter   (private val context: Travel, private val list: List<AttractionsBean.Data>) : BaseAdapter(){
 
@@ -42,17 +41,10 @@ class AttractionsAdapter   (private val context: Travel, private val list: List<
         }
 
         if(list[position].images.isNotEmpty()){
-            var picasso = Picasso.Builder(context).downloader(OkHttp3Downloader(context.okHttpClient)).build()
-            picasso.load(list[position].images[0].src).into(object:Target{
-                override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
-                    holder.imageView.setImageBitmap(bitmap)
-                }
-                override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
-                }
-                override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
-                }
-            })
-        }
+            Glide.with(context).load(list[position].images[0].src).into(holder.imageView)
+        }else
+            holder.imageView.setImageBitmap(null)
+
 
         holder.name_title.text = list[position].name
         holder.introduction.text = list[position].introduction
