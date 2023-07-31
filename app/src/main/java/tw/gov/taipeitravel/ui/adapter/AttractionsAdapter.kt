@@ -43,7 +43,7 @@ class AttractionsAdapter   (private val context: Travel, private val list: List<
         if(list[position].images.isNotEmpty()){
             Glide.with(context).load(list[position].images[0].src).into(holder.imageView)
         }else
-            holder.imageView.setImageBitmap(null)
+            holder.imageView.setImageResource(R.mipmap.ic_launcher)
 
 
         holder.name_title.text = list[position].name

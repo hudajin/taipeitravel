@@ -31,7 +31,6 @@ class AttractionsFragment : JFragment(), View.OnClickListener {
     private var current_lang = "zh-tw"
     private lateinit var langDialog:LangDialog
     private lateinit var attractionsBean: AttractionsBean
-    private lateinit var attractionsAdapter:AttractionsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,7 +51,7 @@ class AttractionsFragment : JFragment(), View.OnClickListener {
                 is ApiResult.Success -> {
                     JDialog.cancelLoading()
                     attractionsBean = it.data
-                    attractionsAdapter = AttractionsAdapter(mCtx,it.data.data)
+                    var attractionsAdapter = AttractionsAdapter(mCtx,it.data.data)
                     binding.attractionsList.adapter = attractionsAdapter
                     attractionsAdapter.notifyDataSetChanged()
                 }

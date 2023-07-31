@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.SavedStateHandle
+import com.bumptech.glide.Glide
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
@@ -64,16 +65,7 @@ class AttractionsDFragment : JFragment(), View.OnClickListener {
                 startActivity(i)
             })
             if(it.images.isNotEmpty()){
-               var picasso = Picasso.Builder(requireActivity()).downloader(OkHttp3Downloader(mCtx.okHttpClient)).build()
-               picasso.load(it.images[0].src).into(object: Target {
-                   override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
-                       binding.pic.setImageBitmap(bitmap)
-                   }
-                   override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
-                   }
-                   override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
-                   }
-               })
+                Glide.with(requireActivity()).load(it.images[0].src).into(binding.pic)
            }
 
         }
